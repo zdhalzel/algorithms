@@ -182,7 +182,7 @@ class Graph(object):
 
         node.visited = True
         ret_list = [node.value]
-        
+
         queue = deque([node])
         while queue:
             current_node = queue.popleft()

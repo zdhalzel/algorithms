@@ -1,9 +1,8 @@
 '''This is an implementation of Quicksort inspired by the Udacity technical interview course'''
-from random import shuffle
 
 def quicksort(array):
     if (len(array) < 2): return array
-    if (len(array) == 2): return swap(array)
+    if (len(array) == 2): return sort(array)
     return partition(array)
 
 
@@ -20,7 +19,7 @@ def partition(array):
     return quicksort(array[0:start]) + quicksort(array[start:len(array)])
 
 
-def swap(array):
+def sort(array):
     if array[0] > array[1]:
         array[0], array[1] = array[1], array[0]
     return array
