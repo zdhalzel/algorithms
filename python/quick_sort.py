@@ -1,9 +1,8 @@
 '''This is an implementation of Quicksort inspired by the Udacity technical interview course'''
 
-
 def quicksort(array):
     if (len(array) < 2): return array
-    if (len(array) == 2): return swap(array)
+    if (len(array) == 2): return sort(array)
     return partition(array)
 
 
@@ -17,11 +16,10 @@ def partition(array):
             array[end - 1] = pivot
             end -= 1
         start += 1
-    array = quicksort(array[0:start]) + quicksort(array[start:len(array)])
-    return array
+    return quicksort(array[0:start]) + quicksort(array[start:len(array)])
 
 
-def swap(array):
+def sort(array):
     if array[0] > array[1]:
         array[0], array[1] = array[1], array[0]
     return array
